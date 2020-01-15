@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = ({ icon, title }) => {
   return (
@@ -10,10 +10,14 @@ const Navbar = ({ icon, title }) => {
       </h1>
       <ul>
         <li>
-          <Link to='/'>Home</Link>
+          <NavLink exact activeClassName='is-active' to='/'>
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to='/about'>About</Link>
+          <NavLink activeClassName='is-active' to='/about'>
+            About
+          </NavLink>
         </li>
       </ul>
     </nav>
@@ -21,7 +25,7 @@ const Navbar = ({ icon, title }) => {
 };
 
 Navbar.defaultProps = {
-  title: 'Github Finder',
+  title: 'Github Search',
   icon: 'fab fa-github'
 };
 

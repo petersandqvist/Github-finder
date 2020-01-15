@@ -20,6 +20,7 @@ const User = ({ match }) => {
     avatar_url,
     location,
     bio,
+    email,
     blog,
     login,
     html_url,
@@ -27,7 +28,8 @@ const User = ({ match }) => {
     following,
     public_repos,
     public_gists,
-    hireable,
+    created_at,
+    updated_at,
     company
   } = user;
 
@@ -38,12 +40,6 @@ const User = ({ match }) => {
       <Link to='/' className='btn btn-light'>
         Back to search
       </Link>
-      hireable:{' '}
-      {hireable ? (
-        <i className='fas fa-check text-success' />
-      ) : (
-        <i className='fas fa-times-circle text-danger' />
-      )}
       <div className='card grid-2'>
         <div className='all-center'>
           <img
@@ -53,7 +49,15 @@ const User = ({ match }) => {
             style={{ width: '150px' }}
           />
           <h1>{name}</h1>
-          <p>Location: {location}</p>
+          <ul>
+            <li>
+              {location && (
+                <Fragment>
+                  <strong>location:</strong> {location}
+                </Fragment>
+              )}
+            </li>
+          </ul>
         </div>
         <div>
           {bio && (
@@ -62,7 +66,12 @@ const User = ({ match }) => {
               <p>{bio}</p>
             </Fragment>
           )}
-          <a href={html_url} className='btn btn-dark my-1'>
+          <a
+            href={html_url}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='btn btn-dark my-1'
+          >
             Visit Github Profile
           </a>
           <ul>
@@ -84,6 +93,27 @@ const User = ({ match }) => {
               {blog && (
                 <Fragment>
                   <strong>Website: </strong> {blog}
+                </Fragment>
+              )}
+            </li>
+            <li>
+              {email && (
+                <Fragment>
+                  <strong>Email: </strong> {email}
+                </Fragment>
+              )}
+            </li>
+            <li>
+              {created_at && (
+                <Fragment>
+                  <strong>Created at: </strong> {created_at}
+                </Fragment>
+              )}
+            </li>
+            <li>
+              {updated_at && (
+                <Fragment>
+                  <strong>Updated at: </strong> {updated_at}
                 </Fragment>
               )}
             </li>

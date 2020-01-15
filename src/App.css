@@ -32,6 +32,10 @@ a:hover {
   color: #666;
 }
 
+.is-active {
+  text-decoration: underline;
+}
+
 ul {
   list-style: none;
 }
