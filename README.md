@@ -1,5 +1,5 @@
-# Project based on a tutorial on YouTube.
-
+# Project based on a tutorial on YouTube by Brad Traversy.
+A small app build with React that lets you search for any GitHub user and check out his public information. This app uses the Context API for state management.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
